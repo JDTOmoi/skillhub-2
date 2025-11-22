@@ -16,6 +16,11 @@ class PesertaController extends Controller
     public function detailPeserta($peserta) {
         //GET: Menampilkan detail satu peserta.
         $p = Peserta::findOrFail($peserta);
+
+        if (!$p) {
+            return back();
+        }
+        
         return view('peserta.detail', compact('p'));
     }
 
@@ -31,6 +36,11 @@ class PesertaController extends Controller
     public function updatePesertaMenu(Request $request) {
         //GET
         $p = Peserta::findOrFail($request->peserta);
+
+        if (!$p) {
+            return back();
+        }
+        
         return view('peserta.update', compact('p'));
     }
 
@@ -41,6 +51,11 @@ class PesertaController extends Controller
     public function confirmDeletePeserta(Request $request) {
         //GET: Konfirmasi penghapusan peserta.
         $p = Peserta::findOrFail($request->peserta);
+
+        if (!$p) {
+            return back();
+        }
+
         return view('peserta.hapus', compact('p'));
     }
 
@@ -48,5 +63,7 @@ class PesertaController extends Controller
         //DELETE: Menghapus peserta.
         $p = Peserta::findOrFail($request->peserta);
         $p->delete();
+
+        return redirect()->route('MenuPeserta');
     }
 }
