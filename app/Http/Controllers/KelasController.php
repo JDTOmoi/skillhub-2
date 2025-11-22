@@ -36,6 +36,8 @@ class KelasController extends Controller
             'description' => $request->description,
             'instructor' => $request->instructor
         ]);
+
+        return redirect()->route('MenuKelas');
     }
 
     public function updateKelasMenu(Request $request) {
@@ -59,7 +61,10 @@ class KelasController extends Controller
 
         $k->name = $request->name;
         $k->description = $request->description;
-        $k->instructor = $request->instructor; 
+        $k->instructor = $request->instructor;
+        $k->save();
+
+        return redirect()->route('DetailKelas', ['kelas' => $k->id]);
     }
 
     public function confirmDeleteKelas(Request $request) {

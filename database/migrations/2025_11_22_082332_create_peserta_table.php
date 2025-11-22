@@ -18,7 +18,7 @@ return new class extends Migration
             $table->tinyInteger("grade");
             $table->string('email')->unique();
             $table->string('phone_number', 20)->unique();
-            $table->string('country_of_origin', 32);
+            $table->string('country_of_origin', 48);
             $table->string('school', 64);
             $table->string('photo');
             $table->string('address');
