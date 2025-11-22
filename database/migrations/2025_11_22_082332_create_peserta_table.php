@@ -13,9 +13,15 @@ return new class extends Migration
     {
         Schema::create('peserta', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
+            $table->string("name", 40);
             $table->date("dob");
             $table->tinyInteger("grade");
+            $table->string('email')->unique();
+            $table->string('phone_number', 20)->unique();
+            $table->string('country_of_origin', 32);
+            $table->string('school', 64);
+            $table->string('photo');
+            $table->string('address');
             $table->timestamps();
         });
     }
