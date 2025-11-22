@@ -27,4 +27,12 @@ class PendaftaranController extends Controller
     public function displayAllPesertaForKelas($kelas) {
         //GET: Menampilkan daftar peserta yang terdaftar pada suatu kelas tertentu.
     }
+
+    public function confirmDeletePendaftaran(Request $request) {
+
+    }
+
+    public function deletePendaftaran(Request $request) {
+
+    }
 }

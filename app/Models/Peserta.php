@@ -13,4 +13,9 @@ class Peserta extends Model
     protected $table = "peserta";
 
     protected $fillable = ["name", "dob", "grade"];
+
+    public function pendaftaran(): HasMany
+    {
+        return $this->hasMany(Pendaftaran::class, 'pesertaID');
+    }
 }

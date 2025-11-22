@@ -13,4 +13,9 @@ class Kelas extends Model
     protected $table = "kelas";
 
     protected $fillable = ["name", "description", "instructor"];
+
+    public function pendaftaran(): HasMany
+    {
+        return $this->hasMany(Pendaftaran::class, 'kelasID');
+    }
 }

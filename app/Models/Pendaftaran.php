@@ -16,11 +16,11 @@ class Pendaftaran extends Model
 
     public function peserta(): BelongsTo
     {
-        return $this->belongsTo(Peserta::class, 'pesertaID', 'id');
+        return $this->belongsTo(Peserta::class, 'pesertaID');
     }
 
     public function kelas(): BelongsTo
     {
-        return $this->belongsTo(Kelas::class, 'kelasID', 'id');
+        return $this->belongsTo(Kelas::class, 'kelasID');
     }
 }
