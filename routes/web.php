@@ -22,8 +22,8 @@ Route::prefix('pendaftaran')->group(function () {
     Route::get('/', [PendaftaranController::class, 'mainMenu'])->name('MenuPendaftaran');
     Route::get('/register', [PendaftaranController::class, 'registerMenu'])->name('RegisterPendaftaran');
     Route::post('/register', [PendaftaranController::class, 'registerPesertaToClasses'])->name('RegisterPendaftaranPost');
-    Route::get('/peserta', [PendaftaranController::class, 'displayAllKelasForPeserta'])->name('PesertaPendaftaran');
-    Route::get('/kelas', [PendaftaranController::class, 'displayAllPesertaForKelas'])->name('KelasPendaftaran');
+    Route::get('/peserta/{peserta}', [PendaftaranController::class, 'displayAllKelasForPeserta'])->name('PesertaPendaftaran');
+    Route::get('/kelas/{kelas}', [PendaftaranController::class, 'displayAllPesertaForKelas'])->name('KelasPendaftaran');
     Route::get('/delete', [PendaftaranController::class, 'confirmDeletePendaftaran'])->name('ConfirmDeletePendaftaran');
     Route::delete('/delete', [PendaftaranController::class, 'deletePendaftaran'])->name('HapusPendaftaran');
 });

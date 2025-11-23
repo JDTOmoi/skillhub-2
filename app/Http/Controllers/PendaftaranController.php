@@ -68,7 +68,7 @@ class PendaftaranController extends Controller
     }
 
     public function confirmDeletePendaftaran(Request $request) {
-        $pnd = Pendaftaran::findOrFail($request->peserta);
+        $pnd = Pendaftaran::findOrFail($request->pendaftaran);
 
         if (!$pnd) {
             return back();
@@ -78,7 +78,7 @@ class PendaftaranController extends Controller
     }
 
     public function deletePendaftaran(Request $request) {
-        $pnd = Pendaftaran::findOrFail($request->peserta);
+        $pnd = Pendaftaran::findOrFail($request->pendaftaran);
 
         if (!$pnd) {
             return back();

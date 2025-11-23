@@ -253,3 +253,11 @@
     <option value="Zambia">Zambia</option>
     <option value="Zimbabwe">Zimbabwe</option>
 </select>
+
+<script>
+    document.querySelectorAll('#country_of_origin option').forEach(option => {
+        const value = option.value;
+        const userVal = '{{$p->country_of_origin}}';
+        if (String(value) === userVal) option.selected = true;
+    });
+</script>

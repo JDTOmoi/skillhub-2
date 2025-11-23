@@ -12,7 +12,7 @@ class Peserta extends Model
 
     protected $table = "peserta";
 
-    protected $fillable = ["name", "dob", "grade"];
+    protected $fillable = ["name", "dob", "grade", "email", "phone_number", "country_of_origin", "school", "address"];
 
     public function pendaftaran(): HasMany
     {

@@ -20,7 +20,6 @@ return new class extends Migration
             $table->string('phone_number', 20)->unique();
             $table->string('country_of_origin', 48);
             $table->string('school', 64);
-            $table->string('photo');
             $table->string('address');
             $table->timestamps();
         });
