@@ -16,9 +16,7 @@ use App\Http\Controllers\PendaftaranController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PesertaController::class, 'displayAllPeserta'])->name('MenuPeserta');
 
 Route::prefix('pendaftaran')->group(function () {
     Route::get('/', [PendaftaranController::class, 'mainMenu'])->name('MenuPendaftaran');

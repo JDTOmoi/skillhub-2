@@ -75,7 +75,7 @@ class KelasController extends Controller
             return back();
         }
 
-        return view('kelas.delete', compact('k'));
+        return view('kelas.hapus', compact('k'));
     }
 
     public function deleteKelas(Request $request) {
