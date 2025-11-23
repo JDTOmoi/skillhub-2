@@ -44,6 +44,12 @@ class PendaftaranController extends Controller
         }
 
         foreach ($request->kelas as $k) {
+            $exists = Pendaftaran::where('pesertaID', $p->id)->where('kelasID', $k)->exists();
+            
+            if ($exists) {
+                continue;
+            }
+            
             Pendaftaran::create([
                 'pesertaID' => $p->id,
                 'kelasID' => $k,

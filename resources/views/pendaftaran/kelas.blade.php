@@ -8,13 +8,21 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nama</th>
+                <th scope="col">Aksi</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($pnd as $_pnd)
             <tr>
                 <th scope="row">{{$_pnd->peserta->id}}</th>
-                <td>{{$_pnd->peserta->name}}</td>   
+                <td>{{$_pnd->peserta->name}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" onclick="getElementById('close-{{$_pnd->id}}').submit()">Hapus</button>
+                    <form id="close-{{$_pnd->id}}" action="{{route('ConfirmDeletePendaftaran')}}"> 
+                        @csrf
+                        <input type="hidden" name="pendaftaran" value="{{$_pnd->id}}">
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>
