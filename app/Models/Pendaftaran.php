@@ -12,7 +12,7 @@ class Pendaftaran extends Model
 
     protected $table = "pendaftaran";
     
-    protected $guarded = ["pesertaID", "kelasID"];
+    protected $fillable = ["pesertaID", "kelasID"];
 
     public function peserta(): BelongsTo
     {

@@ -11,10 +11,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($p as $_p)
+            @foreach ($pnd as $_pnd)
             <tr>
-                <th scope="row">{{$_p->id}}</th>
-                <td>{{$_p->name}}</td>   
+                <th scope="row">{{$_pnd->peserta->id}}</th>
+                <td>{{$_pnd->peserta->name}}</td>   
             </tr>
             @endforeach
         </tbody>

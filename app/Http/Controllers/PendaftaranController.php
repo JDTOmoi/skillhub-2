@@ -23,7 +23,7 @@ class PendaftaranController extends Controller
         $p = Peserta::all();
         $k = Kelas::all();
 
-        return view('pendaftaran.daftar', compact('p', 'k'));
+        return view('pendaftaran.tambah', compact('p', 'k'));
     }
 
     public function registerPesertaToClasses(Request $request) {
@@ -45,7 +45,7 @@ class PendaftaranController extends Controller
 
         foreach ($request->kelas as $k) {
             Pendaftaran::create([
-                'pesertaID' => $request->peserta,
+                'pesertaID' => $p->id,
                 'kelasID' => $k,
             ]);
         }

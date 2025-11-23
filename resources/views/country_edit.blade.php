@@ -1,4 +1,4 @@
-<select class="form-select" autocomplete="country" id="country_of_origin" name="country_of_origin">
+<select class="form-select" autocomplete="country" id="country_of_origin" name="country_of_origin" required>
     <option>select country</option>
     <option value="Afghanistan">Afganistan</option>
     <option value="Åland Islands">Kepulauan Aland</option>
